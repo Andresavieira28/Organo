@@ -5,7 +5,7 @@ import Time from './componentes/Time/time';
 
 function App() {
 
-  const [colaboradores, setColaboradores] = useState('');
+  const [colaboradores, setColaboradores] = useState([]);
 
   const aoNovoColaboradorAdd = (colaborador) => {
     console.log(colaborador);
@@ -59,8 +59,16 @@ function App() {
   return (
     <div className="App">
       <Banner />
+
       <Form times={times.map(time => time.nome)} aoColaboradorCadastrado = {colaboorador => aoNovoColaboradorAdd(colaboorador)}/>
-      {times.map(time => <Time key={time.nome} nome= {time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} />)}
+
+      {times.map(time => <Time 
+        key={time.nome}
+        nome= {time.nome}
+        corPrimaria={time.corPrimaria}
+        corSecundaria={time.corSecundaria}
+        colaboradores={colaboradores}
+      />)}
     </div>
   );
 }
