@@ -19,6 +19,10 @@ const Formulario = (props) => {
       imagem,
       time
     })
+    setNome('')
+    setCargo('')
+    setImagem('')
+    setTime('')
   }
 
   return (
@@ -41,7 +45,7 @@ const Formulario = (props) => {
 
         <TextField 
           label="Imagem" 
-          placeholder="Digite o endereço da sua imagem"
+          placeholder="Digite o endereço do seu GitHub + .png"
           valor={imagem} 
           aoAlterado={valor => setImagem(valor)} />
 
