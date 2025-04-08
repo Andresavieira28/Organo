@@ -1,0 +1,52 @@
+.banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #6278F7;
+    padding: 50px auto;
+    margin: auto;
+    gap: 5px;
+    flex-wrap: wrap; /* ajuda na responsividade */
+}
+
+.banner-image {
+    width: 25%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.banner:hover .banner-image {
+    transform: scale(1.03);
+}
+
+.banner-text {
+    color: white;
+    font-size: 1.0rem;
+    font-weight: 300;
+    margin-right: 40px; /* ← espaço da direita */
+    text-align: right;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .banner-image {
+        width: 50%;
+        max-height: 120px;
+    }
+
+    .banner-text {
+        font-size: 1.2rem;
+        max-width: 100%;
+    }
+}
