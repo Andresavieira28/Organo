@@ -1,15 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Banner from './componentes/Banner/banner';
 import Form from './componentes/form/form'
 import Time from './componentes/Time/time';
 import Rodape from './componentes/rodape/rodape';
 
 function App() {
-
   const [colaboradores, setColaboradores] = useState([]);
 
+  useEffect(() => {
+    axios.get("http://localhost:8800")
+      .then(res => setColaboradores(res.data))
+      .catch(err => console.error("Erro ao buscar colaboradores:", err));
+  }, []);
+
   const aoNovoColaboradorAdd = (colaborador) => {
-    setColaboradores ([...colaboradores,colaborador])
+    axios.post("http://localhost:8800", colaborador)
+      .then((res) => {
+        // Se o backend retornar o novo colaborador com ID, por exemplo
+        console.log('Colaborador criado:', res.data);
+        const colaboradorCriado = res.data;
+        setColaboradores([...colaboradores, colaboradorCriado]);
+        console.log("Novo estado de colaboradores:", [...colaboradores, colaboradorCriado]);
+      })
+      .catch(err => console.error("Erro ao adicionar colaborador:", err));
   }
 
   const times = [
