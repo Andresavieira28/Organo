@@ -1,28 +1,72 @@
+/* form.css */
+.formulario-container {
+  background: linear-gradient(135deg, #00c6ff, #0072ff), ;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
 .formulario {
-    display: flex;
-    justify-content: center;
-    margin: 15px;
-  }
-  
-  .formulario form {
-    max-width: 100%;
-    background-color: #F2F2F2;
-    border-radius: 20px;
-    padding: 26px 90px;
-    box-shadow: 8px 8px 16px rgba(0, 0 ,0, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centraliza todos os filhos do form */
-  }
-  
-  .formulario form > * {
-    width: 90%; /* define a largura de todos os filhos do form */
-    max-width: 500px; /* define um limite opcional */
-  }
-  
-  .formulario label {
-    text-align: left;
-    display: block;
-    margin-bottom: 1px;
-  }
-  
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.0rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  max-height: 65vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.formulario__titulo {
+  font-weight: 600;
+  text-align: center;
+  color: #0072ff;
+}
+
+.formulario__campo label {
+  display: block;
+
+  font-weight: 500;
+  color: #333;
+}
+
+.formulario__campo input,
+.formulario__campo select {
+  width: 80%;
+  padding: 0.75rem;
+  border: none;
+  border-bottom: 2px solid #00c6ff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.formulario__campo input:focus,
+.formulario__campo select:focus {
+  border-bottom-color: #0072ff;
+}
+
+.formulario__acao {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.formulario__acao button {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.formulario__acao button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
